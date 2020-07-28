@@ -1,0 +1,22 @@
+.navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+}
+.container{
+    padding: 100px 0;
+    text-align: center;
+}
+.Searchbar{
+  float: none;
+  /* padding: 6px; */
+  border: none;
+  margin-top: 0 auto;
+  margin-right: 16px;
+  text-align: center;
+  font-size: 17px;
+}
+    
+
