@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import models.ScienceFiction;
 
 @Repository
-public interface ScienceFictionRepo extends JpaRepository<ScienceFiction, Integer> {
+public interface ScienceFictionRepo extends JpaRepository<ScienceFiction, Long> {
 
 }
