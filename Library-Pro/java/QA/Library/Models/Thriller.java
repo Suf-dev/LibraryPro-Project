@@ -1,33 +1,37 @@
-package models;
+package QA.Library.Models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class ScienceFiction {
+public class Thriller {
 	
 	@Id
-	@GeneratedValue
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private int tid;
 	private String name;
 	private String author;
-	@Column(name="Publication date")
+	@Column(name="Publicationdate")
 	private String date;
 	private String isbn;
 	
-	public ScienceFiction() {
+	public Thriller() {
 		
 	}
 
-	public Long getId() {
-		return id;
+	
+	public int getTid() {
+		return tid;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+
+	public void setTid(int tid) {
+		this.tid = tid;
 	}
+
 
 	public String getName() {
 		return name;

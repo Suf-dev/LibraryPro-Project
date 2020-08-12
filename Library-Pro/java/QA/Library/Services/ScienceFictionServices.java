@@ -1,11 +1,13 @@
-package services;
+package QA.Library.Services;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
-import models.ScienceFiction;
-import repositories.ScienceFictionRepo;
+import QA.Library.Models.ScienceFiction;
+import QA.Library.Repositories.ScienceFictionRepo;
+
+
 
 @Service
 public class ScienceFictionServices {
@@ -21,24 +23,34 @@ public class ScienceFictionServices {
 		repo.save(scifi);
 		return "record inserted";
 	}
+	
+//	public ScienceFiction storeRecord(ScienceFiction scienceFiction) {
+//		return repo.saveAndFlush(scienceFiction);
+//	}
 
 	public List<ScienceFiction> readAll() {
 		List<ScienceFiction> scifi = this.repo.findAll();
 		return scifi;
 	}
 
-	public Optional<ScienceFiction> readByid(Long id) {
+	public Optional<ScienceFiction> readByid(int id) {
 		Optional<ScienceFiction> record = this.repo.findById(id);
 		return record;
 	}
-//	public ScienceFiction update(ScienceFiction newSciFi, Long id){
-//		Optional<ScienceFiction> scifi = readByid(id);
-//	
-//		ScienceFiction record = this.repo.save(scifi);
-//		return record;
-//		
-//	}
-	public boolean delete(Long id) {
+	public ScienceFiction update(ScienceFiction newSciF){
+		Optional<ScienceFiction> scifi = readByid(newSciF.getSid());
+		if(scifi.isPresent()) {
+			if (newSciF.getSname()=="") {
+				newSciF.setSname(scifi.get().getSname());
+			}
+			this.repo.save(newSciF);
+			
+		}
+		
+		return scifi.get();
+		
+	}
+	public boolean delete(int id) {
 		this.repo.deleteById(id);
 		boolean deleted = !this.repo.existsById(id);
 		return deleted;

@@ -1,17 +1,21 @@
-package models;
+package QA.Library.Models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+@Entity
 public class Biography {
 	
 	@Id
-	@GeneratedValue
-	private int id;
-	private String name;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private int Bid;
+	private String Bname;
 	private String author;
-	@Column(name="Publication date")
+	@Column(name="Publicationdate")
 	private String date;
 	private String isbn;
 	
@@ -19,21 +23,32 @@ public class Biography {
 		
 	}
 
-	public int getId() {
-		return id;
+	
+
+	public int getBid() {
+		return Bid;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+
+	public void setBid(int bid) {
+		Bid = bid;
 	}
 
-	public String getName() {
-		return name;
+
+
+
+	public String getBname() {
+		return Bname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+
+	public void setBname(String bname) {
+		Bname = bname;
 	}
+
+
 
 	public String getAuthor() {
 		return author;
