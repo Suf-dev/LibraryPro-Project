@@ -63,7 +63,7 @@ public class ScienceFictionController {
 		return serv.readAll();
 	}
 	
-	@PostMapping("/readbyid/{a}")
+	@GetMapping("/readbyid/{a}")
 	public Optional<ScienceFiction> readByid(@PathVariable(value="a") int sid) {
 		return serv.readByid(sid);
 	}
