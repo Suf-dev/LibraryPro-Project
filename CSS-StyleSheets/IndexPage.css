@@ -9,14 +9,24 @@
     padding: 100px 0;
     text-align: center;
 }
-.Searchbar{
-  float: none;
-  /* padding: 6px; */
+
+.search-field{
+  height: 50px;
+  padding: 10px;
+  width: 25%;
   border: none;
-  margin-top: 0 auto;
-  margin-right: 16px;
-  text-align: center;
-  font-size: 17px;
+  margin-bottom: 250px;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 45px;
+  outline: none;
+  
 }
+.form-box{
+  text-align: center;
+}
+
+
+
+
     
 
