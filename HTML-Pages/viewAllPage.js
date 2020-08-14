@@ -1,6 +1,6 @@
 
 function getBook(){
-    fetch('https://localhost:8003/insertRecord')
+    fetch('http://localhost:9001/viewAll')
     .then(
       function(response) {
         if (response.status !== 200) { 
@@ -13,34 +13,35 @@ function getBook(){
         response.json().then(function(data) {
           console.log(data);
           for (let i = 0; i < data.length; i++) {
-            document.querySelector("#input").innerHTML = data[i].regno;
+            document.querySelector("#view").innerHTML = data[i].sid;
             console.log(
-              (document.querySelector("#input").innerHTML = data[i].name)
+              (document.querySelector("#view").innerHTML = data[i].sname)
             );
             console.log(
-              (document.querySelector("#input").innerHTML = data[i].address)
+              (document.querySelector("#view").innerHTML = data[i].author)
             );
             console.log(
-              (document.querySelector("#input").innerHTML =
-              data[i].completed)
+              (document.querySelector("#view").innerHTML = data[i].date)
             );
             console.log(
-              (document.querySelector("#input").innerHTML =
-              data[i].completed)
+              (document.querySelector("#view").innerHTML = data[i].isbn)
             );
     
             let para = document.createElement("P"); // Create a <p> element
             para;
             para.className = "alert alert-dark col-md-8";
-            para.innerText = `The User id is : ${(document.querySelector(
-              "#input"
-            ).innerHTML = data[i].regno)} \n The User id is :  ${(document.querySelector(
-              "#input"
-            ).innerHTML = data[i].name)} \n  The title is : ${(document.querySelector(
-              "#input"
-            ).innerHTML = data[i].address)}  \n  The completed status is : ${(document.querySelector(
-              "#input"
-            ).innerHTML = data[i].completed)}`; // Insert text
+            para.innerText = `Book id : ${(document.querySelector(
+              "#view"
+             ).innerHTML = data[i].sid)} \n Title :  ${(document.querySelector(
+              "#view"
+             ).innerHTML = data[i].sname)} \n  Author : ${(document.querySelector(
+              "#view"
+             ).innerHTML = data[i].author)}  \n  Publication date : ${(document.querySelector(
+              "#view"
+             ).innerHTML = data[i].date)}  \n  ISBN : ${(document.querySelector(
+               "#view"
+             ).innerHTML = data[i].isbn)}`;
+               // Insert text
             let myDiv = document.getElementById("book");
             myDiv.appendChild(para);
           }
