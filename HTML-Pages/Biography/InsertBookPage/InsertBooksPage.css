@@ -1,3 +1,13 @@
+.navbar-brand {
+        float:none;
+        margin:0 auto;
+        display: block;
+        text-align: center;
+        font-size: 50px;
+}
+
+
+
 input[type="text"]{
         height: 50px;
         padding: 10px;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LibraryPro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/HTML-Pages/Biography/InsertBookPage/InsertBooksPage.css">
+</head>
+ <body>
+    <div class="w3-container w3-red">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <h1 id="title" class="navbar-brand" href="#">LibraryPro</h1>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="/HTML-Pages/Biography/IndexPage/Index.html">Search</a></li>
+              <li><a class="dropdown-item" href="/HTML-Pages/Biography/viewAllPage/viewAllPage.html">View All</a></li>
+              <li><a class="dropdown-item" href="/HTML-Pages/Biography/DeletePage/deletePage.html">Dispose</a></li> 
+              <li><a class="dropdown-item" href="/HTML-Pages/Biography/UpdatePage/UpdatePage.html">Replace</a></li>
+            </ul>
+          </div>
+         
+          </div>
+
+        </nav>
+
+
+    <div class="container">
+        <h3>Place a new Biography book on the shelf</h3>
+    </div>
+    <div>
+        <form class="input" method='POST' >
+            <div><center><input type="text" id="sname" placeholder="Book name"></center></div>
+            <div><center><input type="text" id="author" placeholder="Author"></center></div>
+            <div><center><input type="text" id="date" placeholder="Publication date"></center></div>
+            <div><center><input type="text" id="isbn" placeholder="ISBN"></center></div>
+            <div><center><button id="button1" onclick='getResults()' class="btn btn-dark">submit</button></center></div>
+            <div id="book"></div>
+        </form>
+    </div>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="/JavaScript/InsertBooks.js"></script>
+
+        
+ </body>
+
+</html>
