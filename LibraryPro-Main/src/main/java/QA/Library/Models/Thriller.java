@@ -12,7 +12,7 @@ public class Thriller {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int tid;
-	private String name;
+	private String tname;
 	private String author;
 	@Column(name="Publicationdate")
 	private String date;
@@ -33,12 +33,12 @@ public class Thriller {
 	}
 
 
-	public String getName() {
-		return name;
+	public String getTname() {
+		return tname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTname(String name) {
+		this.tname = name;
 	}
 
 	public String getAuthor() {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP Requests Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS-StyleSheets/DeletePage.css">
+</head>
+ <body>
+    <div class="w3-container w3-red">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <h1 id="title" class="navbar-brand" href="#">LibraryPro</h1>
+        </nav>
+
+
+    <div class="container">
+        <h2>Click below to delete a book</h2>
+        <br>
+        <br>
+     <form class="input" method='GET'>
+        <div class="form-box">
+            <input id="bookid" class="search-field" type="text" placeholder="Enter book id">
+            <button id="submit1" onclick='getBook()' class="btn btn-dark">Delete</button>
+          </div>
+          <div id="book"></div>
+        </form>
+      </div>
+          
+
+    </div>
+      
+ </body>
+
+</html>
