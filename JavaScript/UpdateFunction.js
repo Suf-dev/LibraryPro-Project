@@ -3,12 +3,14 @@ function getResults(){
     document.querySelector("form.input").addEventListener("submit",function(e) {
         e.preventDefault();
         let x = document.querySelector("form.input").elements;
-    
+        
+        let sid = x["sid"].value;
         let sname = x["sname"].value;
         let author = x["author"].value;
         let date = x["date"].value;
         let isbn = x["isbn"].value;
     
+        console.log(sid);
         console.log(sname);
         console.log(author);
         console.log(date);
@@ -16,12 +18,13 @@ function getResults(){
         
     
         const data = {
+            "sid": sid,
             "sname": sname,
             "author": author,
             "date": date,
             "isbn": isbn
         }
-        fetch("http://localhost:9001/insert", {
+        fetch("http://localhost:9001/update", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -52,13 +55,25 @@ function getResults(){
                 // let myDiv = document.getElementById("drinks");
                 // let nw = myDiv.appendChild(para);
                 // console.log("you entered a record");
-                let para = document.createElement("span"); // Create a <p> element
+//                 let para = document.createElement("P"); // Create a <p> element
                 
-                para.className = "alert alert-success col-md-8";
-                para.innerHTML= "Book placed on Shelf !";
+//                 para.className = "alert alert-success col-md-8";
+//                 para.innerHTML= "Book Updated";
     
-                let myDiv = document.getElementById("book");
-                myDiv.appendChild(para);
+//                 let myDiv = document.getElementById("book");
+//                 myDiv.appendChild(para);
+// -----------------------------------------------------------------------------------------
+
+                    let myDiv = document.getElementById("book");
+                    myDiv.innerHTML="";
+
+                    let para = document.createElement("span")
+                   
+                    para.className = "alert alert-success col-md-8";
+                    para.innerHTML= "Book Replaced !";
+                    myDiv.appendChild(para);
+
+
     
     
     

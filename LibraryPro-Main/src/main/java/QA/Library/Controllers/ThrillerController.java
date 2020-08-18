@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,8 @@ import QA.Library.Models.Thriller;
 import QA.Library.Repositories.ThrillerRepo;
 import QA.Library.Services.ThrillerServices;
 
-@RestController 
+@RestController
+@CrossOrigin
 public class ThrillerController {
 	
 	@Autowired
@@ -26,7 +28,7 @@ public class ThrillerController {
 	
 
 	
-	@GetMapping("/save")
+	@GetMapping("/recordSave")
 	public String saveRecord() {
 		Thriller s = new Thriller();
 		s.setTname("Brains");
@@ -39,7 +41,7 @@ public class ThrillerController {
 	}
 
 
-	@PostMapping("/insert")
+	@PostMapping("/placeRecord")
 	public String insert(@RequestBody Thriller thriller) {
 		return serv.insert(thriller);
 	}
@@ -50,18 +52,18 @@ public class ThrillerController {
 //		return new ResponseEntity<>(save,HttpStatus.CREATED);
 //	}
 	
-	@GetMapping("/viewAll")
+	@GetMapping("/showAll")
 	public List<Thriller> readAll() {
 		return serv.readAll();
 	}
 	
-	@GetMapping("/readbyid/{a}")
+	@GetMapping("/showbyid/{a}")
 	public Optional<Thriller> readByid(@PathVariable(value="a") int tid) {
 		return serv.readByid(tid);
 	}
 	// Inert update from services here
 	
-	@PostMapping("/update")
+	@PostMapping("/updatethrill")
 	public Thriller update(@RequestBody Thriller thriller) {
 		return serv.update(thriller);
 	}
@@ -69,7 +71,7 @@ public class ThrillerController {
 	
 	
 	
-	@DeleteMapping("/delete/{a}")
+	@DeleteMapping("/deletethrill/{a}")
 	public boolean delete(@PathVariable(value="a") int tid) {
 		return serv.delete(tid);
 	}

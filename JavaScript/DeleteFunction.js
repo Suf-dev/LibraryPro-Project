@@ -24,8 +24,8 @@ function getBook(){
         // }
         let bookid=document.getElementById("bookid").value;
     
-        fetch(`http://localhost:9001/readbyid/${bookid}`, {
-            method: "GET",
+        fetch(`http://localhost:9001/delete/${bookid}`, {
+            method: "DELETE",
             mode: "cors",
             headers: {
                 "Content-Type": "application/json",
@@ -34,33 +34,42 @@ function getBook(){
         }).then(response => response.json())
     .then(function (data) {
             //response.json().function(data)
-            // console.log(data.sname)
-            let myDiv = document.getElementById("book");
-            myDiv.innerHTML="";
-           
-            let sname = document.createElement("span")
-            let author = document.createElement("span")
-            let date = document.createElement("span")
-            let isbn = document.createElement("span")
-           
-            sname.className = "alert alert-dark col-md-8";
-            sname.innerText= `Title : ${(sname.innerHTML= data.sname)}`;
             
-            author.className = "alert alert-dark col-md-8";
-            author.innerText= `Author : ${(author.innerHTML= data.author)}`;
+            
+            
+            
+            
+            
+            
+            // console.log(data.sname)
+            // let myDiv = document.getElementById("book");
+            // myDiv.innerHTML="";
+            // let sname = document.createElement("span")
+            // let author = document.createElement("span")
+            
+            // sname.className = "alert alert-dark col-md-8";
+            // sname.innerHTML= data.sname;
+            // author.className = "alert alert-dark col-md-8";
+            // author.innerHTML= data.author;
 
-            date.className = "alert alert-dark col-md-8";
-            date.innerText= `Published : ${(date.innerHTML= data.date)}`;
-
-            isbn.className = "alert alert-dark col-md-8";
-            isbn.innerText= `ISBN : ${(isbn.innerHTML= data.isbn)}`;
 
 
+            // myDiv.appendChild(sname);
+            // myDiv.appendChild(author);
 
-            myDiv.appendChild(sname);
-            myDiv.appendChild(author);
-            myDiv.appendChild(date);
-            myDiv.appendChild(isbn);
+            console.log("JSON response recieved", data);
+            // if(data.status ===200){
+
+                let para = document.createElement("span"); // Create a <p> element
+                
+                para.className = "alert alert-danger col-md-8";
+                para.innerHTML= "Book Disposed !";
+    
+                let myDiv = document.getElementById("book");
+                myDiv.appendChild(para);
+
+
+
 
 
         
@@ -116,6 +125,8 @@ function getBook(){
             //     card.appendChild(cardBody);
             //     return card;
             //   };
+
+            
     
         }).catch(function(error) {
             console.log("failed to fetch request", error);

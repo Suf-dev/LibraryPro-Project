@@ -29,7 +29,7 @@ public class BiographyController {
 	
 
 	
-	@GetMapping("/save")
+	@GetMapping("/saveRecord")
 	public String saveRecord() {
 		Biography s = new Biography();
 		s.setBname("Brains");
@@ -42,7 +42,7 @@ public class BiographyController {
 	}
 
 
-	@PostMapping("/insert")
+	@PostMapping("/place")
 	public String insert(@RequestBody Biography bio) {
 		return serv.insert(bio);
 	}
@@ -53,18 +53,18 @@ public class BiographyController {
 //		return new ResponseEntity<>(save,HttpStatus.CREATED);
 //	}
 	
-	@GetMapping("/viewAll")
+	@GetMapping("/displayAll")
 	public List<Biography> readAll() {
 		return serv.readAll();
 	}
 	
-	@GetMapping("/readbyid/{a}")
+	@GetMapping("/displayid/{a}")
 	public Optional<Biography> readByid(@PathVariable(value="a") int bid) {
 		return serv.readByid(bid);
 	}
 	// Inert update from services here
 	
-	@PostMapping("/update")
+	@PostMapping("/updatebio")
 	public Biography update(@RequestBody Biography bio) {
 		return serv.update(bio);
 	}
@@ -72,7 +72,7 @@ public class BiographyController {
 	
 	
 	
-	@DeleteMapping("/delete/{a}")
+	@DeleteMapping("/deletebio/{a}")
 	public boolean delete(@PathVariable(value="a") int bid) {
 		return serv.delete(bid);
 	}

@@ -43,6 +43,16 @@ public class ScienceFictionServices {
 			if (newSciF.getSname()=="") {
 				newSciF.setSname(scifi.get().getSname());
 			}
+			if(newSciF.getAuthor()=="") {
+				newSciF.setAuthor(scifi.get().getAuthor());
+			}
+			if(newSciF.getDate()=="") {
+				newSciF.setDate(scifi.get().getDate());
+			}
+			if(newSciF.getIsbn()=="") {
+				newSciF.setIsbn(scifi.get().getIsbn());
+			}
+			System.out.println(newSciF);
 			this.repo.save(newSciF);
 			
 		}

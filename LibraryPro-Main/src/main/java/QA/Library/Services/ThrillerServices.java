@@ -3,10 +3,12 @@ package QA.Library.Services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
 
 import QA.Library.Models.Thriller;
 import QA.Library.Repositories.ThrillerRepo;
 
+@Service
 public class ThrillerServices {
 	
 	private ThrillerRepo repo;
