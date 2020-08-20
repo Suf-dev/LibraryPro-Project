@@ -18,10 +18,12 @@ public class ScienceFictionServices {
 		this.repo = repo;
 
 	}
+	
 
-	public String insert(ScienceFiction scifi) {
-		repo.save(scifi);
-		return "record inserted";
+	public ScienceFiction insert(ScienceFiction scifi) {
+		ScienceFiction done = repo.save(scifi);
+		return done;
+		
 	}
 	
 //	public ScienceFiction storeRecord(ScienceFiction scienceFiction) {
@@ -56,14 +58,19 @@ public class ScienceFictionServices {
 			this.repo.save(newSciF);
 			
 		}
+	
 		
 		return scifi.get();
 		
 	}
 	public boolean delete(int id) {
-		this.repo.deleteById(id);
-		boolean deleted = !this.repo.existsById(id);
-		return deleted;
+		
+		boolean find=this.repo.existsById(id);
+//		System.out.println("Testing" + find);
+		if (find) {
+			this.repo.deleteById(id);
+		}
+		return find;
 	}
 
 }

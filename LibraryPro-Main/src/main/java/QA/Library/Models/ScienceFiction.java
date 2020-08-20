@@ -18,6 +18,26 @@ public class ScienceFiction {
 	private String date;
 	private String isbn;
 	
+	
+	
+	
+	public ScienceFiction(int sid, String sname, String author, String date, String isbn) {
+		this.sid = sid;
+		this.sname = sname;
+		this.author = author;
+		this.date = date;
+		this.isbn = isbn;
+	}
+	
+	
+	
+	public ScienceFiction(String sname, String author, String date, String isbn) {
+		this.sname = sname;
+		this.author = author;
+		this.date = date;
+		this.isbn = isbn;
+	}
+	
 	public ScienceFiction() {
 		
 	}

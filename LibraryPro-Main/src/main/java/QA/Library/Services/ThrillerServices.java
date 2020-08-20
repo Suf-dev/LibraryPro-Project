@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import QA.Library.Models.ScienceFiction;
 import QA.Library.Models.Thriller;
 import QA.Library.Repositories.ThrillerRepo;
 
@@ -18,9 +19,10 @@ public class ThrillerServices {
 
 	}
 
-	public String insert(Thriller thriller) {
-		repo.save(thriller);
-		return "record inserted";
+	public Thriller insert(Thriller thrill) {
+		Thriller done = repo.save(thrill);
+		return done;
+		
 	}
 	
 //	public ScienceFiction storeRecord(ScienceFiction scienceFiction) {
@@ -42,6 +44,16 @@ public class ThrillerServices {
 			if (newThrill.getTname()=="") {
 				newThrill.setTname(thrill.get().getTname());
 			}
+			if(newThrill.getAuthor()=="") {
+				newThrill.setAuthor(thrill.get().getAuthor());
+			}
+			if(newThrill.getDate()=="") {
+				newThrill.setDate(thrill.get().getDate());
+			}
+			if(newThrill.getIsbn()=="") {
+				newThrill.setIsbn(thrill.get().getIsbn());
+			}
+			System.out.println(newThrill);
 			this.repo.save(newThrill);
 			
 		}
@@ -49,11 +61,32 @@ public class ThrillerServices {
 		return thrill.get();
 		
 	}
+	
 	public boolean delete(int id) {
-		this.repo.deleteById(id);
-		boolean deleted = !this.repo.existsById(id);
-		return deleted;
+		
+		boolean find=this.repo.existsById(id);
+//		System.out.println("Testing" + find);
+		if (find) {
+			this.repo.deleteById(id);
+		}
+		return find;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	public boolean delete(int id) {
+//		this.repo.deleteById(id);
+//		boolean deleted = !this.repo.existsById(id);
+//		return deleted;
+//	}
 
 }
 

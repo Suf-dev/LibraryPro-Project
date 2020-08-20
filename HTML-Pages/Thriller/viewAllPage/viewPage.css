@@ -1,0 +1,26 @@
+.navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+}
+.container{
+    padding: 100px 0;
+    text-align: center;
+}
+
+.search-field{
+  height: 50px;
+  padding: 2px;
+  width: 25%;
+  border: none;
+  margin-bottom: 2px;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 45px;
+  outline: none;
+  
+}
+.form-box{
+  text-align: center;
+}

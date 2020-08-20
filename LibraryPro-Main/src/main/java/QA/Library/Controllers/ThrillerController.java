@@ -42,7 +42,7 @@ public class ThrillerController {
 
 
 	@PostMapping("/placeRecord")
-	public String insert(@RequestBody Thriller thriller) {
+	public Thriller insert(@RequestBody Thriller thriller) {
 		return serv.insert(thriller);
 	}
 	

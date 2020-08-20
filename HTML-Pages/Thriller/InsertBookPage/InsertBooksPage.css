@@ -20,3 +20,8 @@ input[type="text"]{
         outline: none;
    
 }
+#book{
+        margin-top: 70px;
+        margin-bottom: 70px;
+        text-align: center;
+    }

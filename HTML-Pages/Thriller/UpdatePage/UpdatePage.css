@@ -1,0 +1,28 @@
+.navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+input[type="text"]{
+    height: 50px;
+    padding: 10px;
+    width: 25%;
+    border: none;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 8px 6px -6px black;
+    border-radius: 45px;
+    outline: none;
+
+}
+#book{
+    
+    margin-top: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+}

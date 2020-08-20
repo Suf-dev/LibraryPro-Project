@@ -29,7 +29,7 @@ public class BiographyController {
 	
 
 	
-	@GetMapping("/saveRecord")
+	@GetMapping("/placeRecord")
 	public String saveRecord() {
 		Biography s = new Biography();
 		s.setBname("Brains");
@@ -42,8 +42,8 @@ public class BiographyController {
 	}
 
 
-	@PostMapping("/place")
-	public String insert(@RequestBody Biography bio) {
+	@PostMapping("/add")
+	public Biography insert(@RequestBody Biography bio) {
 		return serv.insert(bio);
 	}
 	

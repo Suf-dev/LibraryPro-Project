@@ -18,6 +18,26 @@ public class Thriller {
 	private String date;
 	private String isbn;
 	
+	
+	public Thriller(int tid, String tname, String author, String date, String isbn) {
+		this.tid = tid;
+		this.tname = tname;
+		this.author = author;
+		this.date = date;
+		this.isbn = isbn;
+	}
+	
+	
+	
+	public Thriller(String tname, String author, String date, String isbn) {
+		this.tname = tname;
+		this.author = author;
+		this.date = date;
+		this.isbn = isbn;
+	}
+	
+	
+
 	public Thriller() {
 		
 	}
@@ -37,8 +57,8 @@ public class Thriller {
 		return tname;
 	}
 
-	public void setTname(String name) {
-		this.tname = name;
+	public void setTname(String tname) {
+		this.tname = tname;
 	}
 
 	public String getAuthor() {
