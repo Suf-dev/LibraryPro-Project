@@ -90,10 +90,7 @@ public class BiographyServiceTest {
 	@Test
 	public void testDeleteByid() {
 		Optional<Biography> entity = Optional.of(new Biography(1,"Robots", "Sam Paul", "19/02/2011", "IDJ6554654"));
-//	
-//	
 		when(brepo.existsById((int) 1)).thenReturn(true);
-//	
 		assertTrue(sserv.delete((int) 1));
 
 	}

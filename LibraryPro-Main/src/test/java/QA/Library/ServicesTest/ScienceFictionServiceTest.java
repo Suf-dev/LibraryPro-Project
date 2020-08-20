@@ -43,7 +43,6 @@ public class ScienceFictionServiceTest {
 		verify(repo, Mockito.times(1)).save(scifi);
 	}
 
-//-------------------------------------------------------------------------------------
 
 	@Test
 	public void testreadAll() {
@@ -58,7 +57,6 @@ public class ScienceFictionServiceTest {
 
 	}
 
-//-------------------------------------------------------------------------------------
 
 //@Test
 //public void testUpdate() {
