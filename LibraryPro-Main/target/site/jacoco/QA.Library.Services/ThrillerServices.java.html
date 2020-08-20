@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThrillerServices.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sufyaan-Aziz</a> &gt; <a href="index.source.html" class="el_package">QA.Library.Services</a> &gt; <span class="el_source">ThrillerServices.java</span></div><h1>ThrillerServices.java</h1><pre class="source lang-java linenums">package QA.Library.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import QA.Library.Models.ScienceFiction;
+import QA.Library.Models.Thriller;
+import QA.Library.Repositories.ThrillerRepo;
+
+@Service
+public class ThrillerServices {
+	
+	private ThrillerRepo repo;
+
+<span class="fc" id="L17">	public ThrillerServices(ThrillerRepo repo) {</span>
+<span class="fc" id="L18">		this.repo = repo;</span>
+
+<span class="fc" id="L20">	}</span>
+
+	public Thriller insert(Thriller thrill) {
+<span class="nc" id="L23">		Thriller done = repo.save(thrill);</span>
+<span class="nc" id="L24">		return done;</span>
+		
+	}
+	
+//	public ScienceFiction storeRecord(ScienceFiction scienceFiction) {
+//		return repo.saveAndFlush(scienceFiction);
+//	}
+
+	public List&lt;Thriller&gt; readAll() {
+<span class="nc" id="L33">		List&lt;Thriller&gt; thrill = this.repo.findAll();</span>
+<span class="nc" id="L34">		return thrill;</span>
+	}
+
+	public Optional&lt;Thriller&gt; readByid(int id) {
+<span class="nc" id="L38">		Optional&lt;Thriller&gt; record = this.repo.findById(id);</span>
+<span class="nc" id="L39">		return record;</span>
+	}
+	public Thriller update(Thriller newThrill){
+<span class="nc" id="L42">		Optional&lt;Thriller&gt; thrill = readByid(newThrill.getTid());</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">		if(thrill.isPresent()) {</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">			if (newThrill.getTname()==&quot;&quot;) {</span>
+<span class="nc" id="L45">				newThrill.setTname(thrill.get().getTname());</span>
+			}
+<span class="nc bnc" id="L47" title="All 2 branches missed.">			if(newThrill.getAuthor()==&quot;&quot;) {</span>
+<span class="nc" id="L48">				newThrill.setAuthor(thrill.get().getAuthor());</span>
+			}
+<span class="nc bnc" id="L50" title="All 2 branches missed.">			if(newThrill.getDate()==&quot;&quot;) {</span>
+<span class="nc" id="L51">				newThrill.setDate(thrill.get().getDate());</span>
+			}
+<span class="nc bnc" id="L53" title="All 2 branches missed.">			if(newThrill.getIsbn()==&quot;&quot;) {</span>
+<span class="nc" id="L54">				newThrill.setIsbn(thrill.get().getIsbn());</span>
+			}
+<span class="nc" id="L56">			System.out.println(newThrill);</span>
+<span class="nc" id="L57">			this.repo.save(newThrill);</span>
+			
+		}
+		
+<span class="nc" id="L61">		return thrill.get();</span>
+		
+	}
+	
+	public boolean delete(int id) {
+		
+<span class="nc" id="L67">		boolean find=this.repo.existsById(id);</span>
+//		System.out.println(&quot;Testing&quot; + find);
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (find) {</span>
+<span class="nc" id="L70">			this.repo.deleteById(id);</span>
+		}
+<span class="nc" id="L72">		return find;</span>
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	public boolean delete(int id) {
+//		this.repo.deleteById(id);
+//		boolean deleted = !this.repo.existsById(id);
+//		return deleted;
+//	}
+
+}
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

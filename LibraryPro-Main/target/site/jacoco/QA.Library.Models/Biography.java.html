@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Biography.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sufyaan-Aziz</a> &gt; <a href="index.source.html" class="el_package">QA.Library.Models</a> &gt; <span class="el_source">Biography.java</span></div><h1>Biography.java</h1><pre class="source lang-java linenums">package QA.Library.Models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Biography {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private int bid;
+	private String bname;
+	private String author;
+	@Column(name=&quot;Publicationdate&quot;)
+	private String date;
+	private String isbn;
+	
+
+	
+<span class="nc" id="L23">	public Biography(String bname, String author, String date, String isbn) {</span>
+<span class="nc" id="L24">		this.bname = bname;</span>
+<span class="nc" id="L25">		this.author = author;</span>
+<span class="nc" id="L26">		this.date = date;</span>
+<span class="nc" id="L27">		this.isbn = isbn;</span>
+<span class="nc" id="L28">	}</span>
+<span class="nc" id="L29">	public Biography(int bid, String bname, String author, String date, String isbn) {</span>
+<span class="nc" id="L30">		this.bid = bid;</span>
+<span class="nc" id="L31">		this.bname = bname;</span>
+<span class="nc" id="L32">		this.author = author;</span>
+<span class="nc" id="L33">		this.date = date;</span>
+<span class="nc" id="L34">		this.isbn = isbn;</span>
+<span class="nc" id="L35">	}</span>
+	
+	
+<span class="fc" id="L38">	public Biography() {</span>
+		
+<span class="fc" id="L40">	}</span>
+
+	
+
+	public int getBid() {
+<span class="nc" id="L45">		return bid;</span>
+	}
+
+
+
+	public void setBid(int bid) {
+<span class="nc" id="L51">		this.bid = bid;</span>
+<span class="nc" id="L52">	}</span>
+
+
+
+
+	public String getBname() {
+<span class="nc" id="L58">		return bname;</span>
+	}
+
+
+
+	public void setBname(String bname) {
+<span class="nc" id="L64">		this.bname = bname;</span>
+<span class="nc" id="L65">	}</span>
+
+
+
+	public String getAuthor() {
+<span class="nc" id="L70">		return author;</span>
+	}
+
+	public void setAuthor(String author) {
+<span class="nc" id="L74">		this.author = author;</span>
+<span class="nc" id="L75">	}</span>
+
+	public String getDate() {
+<span class="nc" id="L78">		return date;</span>
+	}
+
+	public void setDate(String date) {
+<span class="nc" id="L82">		this.date = date;</span>
+<span class="nc" id="L83">	}</span>
+
+	public String getIsbn() {
+<span class="nc" id="L86">		return isbn;</span>
+	}
+
+	public void setIsbn(String isbn) {
+<span class="nc" id="L90">		this.isbn = isbn;</span>
+<span class="nc" id="L91">	}</span>
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

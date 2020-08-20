@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BiographyServices.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sufyaan-Aziz</a> &gt; <a href="index.source.html" class="el_package">QA.Library.Services</a> &gt; <span class="el_source">BiographyServices.java</span></div><h1>BiographyServices.java</h1><pre class="source lang-java linenums">package QA.Library.Services;
+
+
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import QA.Library.Models.Biography;
+import QA.Library.Models.ScienceFiction;
+import QA.Library.Repositories.BiographyRepo;
+
+
+@Service
+public class BiographyServices {
+	
+	private BiographyRepo repo;
+
+<span class="fc" id="L20">	public BiographyServices(BiographyRepo repo) {</span>
+<span class="fc" id="L21">		this.repo = repo;</span>
+
+<span class="fc" id="L23">	}</span>
+
+	public Biography insert(Biography bio) {
+<span class="nc" id="L26">		Biography done = repo.save(bio);</span>
+<span class="nc" id="L27">		return done;</span>
+		
+	}
+	
+
+
+	public List&lt;Biography&gt; readAll() {
+<span class="nc" id="L34">		List&lt;Biography&gt; scifi = this.repo.findAll();</span>
+<span class="nc" id="L35">		return scifi;</span>
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public Optional&lt;Biography&gt; readByid(int id) {
+<span class="nc" id="L48">		Optional&lt;Biography&gt; record = this.repo.findById(id);</span>
+<span class="nc" id="L49">		return record;</span>
+	}
+	
+	
+	
+	public Biography update(Biography newBio){
+<span class="nc" id="L55">		Optional&lt;Biography&gt; bio = readByid(newBio.getBid());</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		if(bio.isPresent()) {</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">			if (newBio.getBname()==&quot;&quot;) {</span>
+<span class="nc" id="L58">				newBio.setBname(bio.get().getBname());</span>
+			}
+<span class="nc bnc" id="L60" title="All 2 branches missed.">			if(newBio.getAuthor()==&quot;&quot;) {</span>
+<span class="nc" id="L61">				newBio.setAuthor(bio.get().getAuthor());</span>
+			}
+<span class="nc bnc" id="L63" title="All 2 branches missed.">			if(newBio.getDate()==&quot;&quot;) {</span>
+<span class="nc" id="L64">				newBio.setDate(bio.get().getDate());</span>
+			}
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			if(newBio.getIsbn()==&quot;&quot;) {</span>
+<span class="nc" id="L67">				newBio.setIsbn(bio.get().getIsbn());</span>
+			}
+<span class="nc" id="L69">			System.out.println(newBio);</span>
+<span class="nc" id="L70">			this.repo.save(newBio);</span>
+			
+		}
+		
+<span class="nc" id="L74">		return bio.get();</span>
+	}
+		
+		
+		public boolean delete(int id) {
+			
+<span class="nc" id="L80">			boolean find=this.repo.existsById(id);</span>
+//			System.out.println(&quot;Testing&quot; + find);
+<span class="nc bnc" id="L82" title="All 2 branches missed.">			if (find) {</span>
+<span class="nc" id="L83">				this.repo.deleteById(id);</span>
+			}
+<span class="nc" id="L85">			return find;</span>
+		}
+		
+		
+	}
+//	public boolean delete(int id) {
+//		this.repo.deleteById(id);
+//		boolean deleted = !this.repo.existsById(id);
+//		return deleted;
+//	}
+
+
+	
+	
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,13 @@
+QA\Library\Repositories\BiographyRepo.class
+QA\Library\Services\ScienceFictionServices.class
+QA\Library\Services\BiographyServices.class
+QA\Library\Controllers\BiographyController.class
+QA\Library\Models\Biography.class
+QA\Library\LibraryPro2Application.class
+QA\Library\Models\Thriller.class
+QA\Library\Controllers\ThrillerController.class
+QA\Library\Repositories\ScienceFictionRepo.class
+QA\Library\Controllers\ScienceFictionController.class
+QA\Library\Repositories\ThrillerRepo.class
+QA\Library\Models\ScienceFiction.class
+QA\Library\Services\ThrillerServices.class
