@@ -2,5 +2,5 @@ projectKey=com.QA:Library-Pro-2
 serverUrl=http://34.105.165.77:9000
 serverVersion=7.5.0.20543
 dashboardUrl=http://34.105.165.77:9000/dashboard?id=com.QA%3ALibrary-Pro-2
-ceTaskId=AXQOJzTIpIDl4g-AX48b
-ceTaskUrl=http://34.105.165.77:9000/api/ce/task?id=AXQOJzTIpIDl4g-AX48b
+ceTaskId=AXQP8U2_pIDl4g-AX48c
+ceTaskUrl=http://34.105.165.77:9000/api/ce/task?id=AXQP8U2_pIDl4g-AX48c
